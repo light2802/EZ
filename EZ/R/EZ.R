@@ -1,7 +1,7 @@
 #' Remove unwanted characters from the column names
 #'
 #'
-#' Sometimes we may get a dataframe wich have column names have characters like !,&,(,),/,.,[,]," "
+#' Sometimes we may get a dataframe wich have column names have characters like !&()/.,[]" "
 #' These are unwanted boviously coz they maek it impossible to reference the column using $ operator or while pipelining
 #' So this function removes those characters from the column names.
 #' 
