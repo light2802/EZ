@@ -36,13 +36,16 @@ clean_names <- function(data,idf=c(),sep='_',use.def=TRUE){
 #' @param data Dataframes,Arrays,Vectors
 #' @param train_size Numeric (should be between 0.0 and 1.0). Represent the proportion of the dataset to include in the test split.
 #' @param seed Controls the shuffling applied to the data before applying the split. Pass an int for reproducible output across multiple function calls.
-#' @param shuffle Whether or not to shuffle the data before splitting.
+#' @param shuffle Whether or not to shuffle the data before splitting. Default is set to FALSE
 #' @return List containing train-test split of inputs.
 #' @seealso [base::gsub()] which this function wraps.
 #' @export
+#' @examples
+#' test_train_split(mtcars)
+#' test_train_split(mtcars, train_size=0.75, seed=101, shuffle=TRUE)
 
 
-train_test_split <- function(data, train_size=0.8, seed=1, shuffle=FALSE){
+test_train_split <- function(data, train_size=0.8, seed=1, shuffle=FALSE){
     set.seed(seed)
     indices <- round(nrow(data)*train_size,digits=0)
     if(shuffle){
