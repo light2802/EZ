@@ -1,0 +1,15 @@
+Package: EZ
+Title: What the Package Does (One Line, Title Case)
+Version: 1.0.0
+Authors@R: 
+    person(given = "Aarya",
+           family = "Chaumal",
+           role = c("aut", "cre"),
+           email = "aarya.chaumal@gmail.com",
+           comment = c(ORCID = "0000-0002-0814-8785"))
+Description: What the package does (one paragraph).
+License: use_gpl3_license()
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
