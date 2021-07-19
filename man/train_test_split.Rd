@@ -7,26 +7,20 @@
 train_test_split(data, train_size = 0.8, seed = 1, shuffle = FALSE)
 }
 \arguments{
-\item{data}{A data frame}
+\item{data}{Dataframes,Arrays,Vectors}
 
-\item{train_size}{List of unwanted characters/ Identifier}
+\item{train_size}{Numeric (should be between 0.0 and 1.0). Represent the proportion of the dataset to include in the test split.}
 
-\item{seed}{Character to substitute/ Separator}
+\item{seed}{Controls the shuffling applied to the data before applying the split. Pass an int for reproducible output across multiple function calls.}
 
-\item{ushuffel}{Boolean whether to use the default identifier list}
+\item{shuffle}{Whether or not to shuffle the data before splitting.}
 }
 \value{
-Dataframe with removed characters from the column names
+List containing train-test split of inputs.
 }
 \description{
-Sometimes we may get a dataframe wich have column names have characters like !,&,(,),/,.,\link{,}," "
-These are unwanted boviously coz they maek it impossible to reference the column using $ operator or while pipelining
-So this function removes those characters from the column names.
-}
-\examples{
-clean_names(data=df,idf=c("|","!","$"),sep='.',use.def=FALSE)
-clean_names(data=df)
-clean_names(data=df,sep='.')
+Splitting dataset into training and testing is a job done before every moedel training
+So this function does exactly that
 }
 \seealso{
 \code{\link[base:grep]{base::gsub()}} which this function wraps.

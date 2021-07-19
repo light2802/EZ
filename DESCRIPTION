@@ -7,8 +7,8 @@ Authors@R:
            role = c("aut", "cre"),
            email = "aarya.chaumal@gmail.com",
            comment = c(ORCID = "0000-0002-0814-8785"))
-Description: What the package does (one paragraph).
-License: use_gpl3_license()
+Description: Few functions that are not there explicitly in R. Not just any functions but useful ones.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)

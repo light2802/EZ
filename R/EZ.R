@@ -1,8 +1,8 @@
 #' Remove unwanted characters from the column names
 #'
 #'
-#' Sometimes we may get a dataframe wich have column names have characters like !&()/.,[]" "
-#' These are unwanted boviously coz they maek it impossible to reference the column using $ operator or while pipelining
+#' Sometimes we may get a dataframe wich have column names have characters like !&()/.," "
+#' These are unwanted obviously coz they make it impossible to reference the column using $ operator or while pipelining
 #' So this function removes those characters from the column names.
 #' 
 #'
@@ -13,10 +13,7 @@
 #' @return Dataframe with removed characters from the column names
 #' @seealso [base::gsub()] which this function wraps.
 #' @export
-#' @examples
-#' clean_names(data=df,idf=c("|","!","$"),sep='.',use.def=FALSE)
-#' clean_names(data=df)
-#' clean_names(data=df,sep='.')
+
 
 clean_names <- function(data,idf=c(),sep='_',use.def=TRUE){
     def=c(" ", "/" , "\\(" , "\\)" , "\\-" , "&")
@@ -32,22 +29,18 @@ clean_names <- function(data,idf=c(),sep='_',use.def=TRUE){
 #' Split dataset into train and test
 #'
 #'
-#' Sometimes we may get a dataframe wich have column names have characters like !,&,(,),/,.,[,]," "
-#' These are unwanted boviously coz they maek it impossible to reference the column using $ operator or while pipelining
-#' So this function removes those characters from the column names.
+#' Splitting dataset into training and testing is a job done before every moedel training
+#' So this function does exactly that
 #' 
 #'
-#' @param data A data frame
-#' @param train_size List of unwanted characters/ Identifier
-#' @param seed Character to substitute/ Separator
-#' @param ushuffel Boolean whether to use the default identifier list
-#' @return Dataframe with removed characters from the column names
+#' @param data Dataframes,Arrays,Vectors
+#' @param train_size Numeric (should be between 0.0 and 1.0). Represent the proportion of the dataset to include in the test split.
+#' @param seed Controls the shuffling applied to the data before applying the split. Pass an int for reproducible output across multiple function calls.
+#' @param shuffle Whether or not to shuffle the data before splitting.
+#' @return List containing train-test split of inputs.
 #' @seealso [base::gsub()] which this function wraps.
 #' @export
-#' @examples
-#' clean_names(data=df,idf=c("|","!","$"),sep='.',use.def=FALSE)
-#' clean_names(data=df)
-#' clean_names(data=df,sep='.')
+
 
 train_test_split <- function(data, train_size=0.8, seed=1, shuffle=FALSE){
     set.seed(seed)
@@ -59,6 +52,6 @@ train_test_split <- function(data, train_size=0.8, seed=1, shuffle=FALSE){
     }
     test <- data[train.indices,]
     train <- data[-train.indices,]
-    return(c(train,test))
+    return(c("train"=train,"test"=test))
 }
 

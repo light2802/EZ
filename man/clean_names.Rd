@@ -19,14 +19,9 @@ clean_names(data, idf = c(), sep = "_", use.def = TRUE)
 Dataframe with removed characters from the column names
 }
 \description{
-Sometimes we may get a dataframe wich have column names have characters like !,&,(,),/,.,\link{,}," "
-These are unwanted boviously coz they maek it impossible to reference the column using $ operator or while pipelining
+Sometimes we may get a dataframe wich have column names have characters like !&()/.," "
+These are unwanted obviously coz they make it impossible to reference the column using $ operator or while pipelining
 So this function removes those characters from the column names.
-}
-\examples{
-clean_names(data=df,idf=c("|","!","$"),sep='.',use.def=FALSE)
-clean_names(data=df)
-clean_names(data=df,sep='.')
 }
 \seealso{
 \code{\link[base:grep]{base::gsub()}} which this function wraps.
