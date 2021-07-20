@@ -23,21 +23,9 @@ My first R package
 ## Installation
 
 
-And the development version from [GitHub](https://github.com/) with:
+Install the development version from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
 devtools::install_github("light2802/EZ")
 ```
-## Example
-
-This is a basic example which shows you how to solve a common problem:
-
-```{r example}
-library(EZ)
-df <- data.frame(names= c("Mazda RX4",  "Mazda RX4 Wag",    "Datsun 710",   "Hornet 4 Drive",   "Hornet Sportabout",    "Valiant",  "Duster 360",   "Merc 240D",    "Merc 230", "Merc 280", "Merc 280C",    "Merc 450SE",   "Merc 450SL",   "Merc 450SLC",  "Cadillac Fleetwood"),
-                          score = c(21, 21, 22.8,   21.4,   18.7,   18.1,   14.3,   24.4,   22.8,   19.2,   17.8,   16.4,   17.3,   15.2,   10.4) )
-df
-clean_names(df)
-```
-
