@@ -6,16 +6,9 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of EZ is to …
+My first R package
 
 ## Installation
-
-You can install the released version of EZ from
-[CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("EZ")
-```
 
 And the development version from [GitHub](https://github.com/) with:
 
@@ -30,32 +23,32 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library(EZ)
-## basic example code
+df <- data.frame(names= c("Mazda RX4",  "Mazda RX4 Wag",    "Datsun 710",   "Hornet 4 Drive",   "Hornet Sportabout",    "Valiant",  "Duster 360",   "Merc 240D",    "Merc 230", "Merc 280", "Merc 280C",    "Merc 450SE",   "Merc 450SL",   "Merc 450SLC",  "Cadillac Fleetwood"),
+                          score = c(21, 21, 22.8,   21.4,   18.7,   18.1,   14.3,   24.4,   22.8,   19.2,   17.8,   16.4,   17.3,   15.2,   10.4) )
+df
+#>                 names score
+#> 1           Mazda RX4  21.0
+#> 2       Mazda RX4 Wag  21.0
+#> 3          Datsun 710  22.8
+#> 4      Hornet 4 Drive  21.4
+#> 5   Hornet Sportabout  18.7
+#> 6             Valiant  18.1
+#> 7          Duster 360  14.3
+#> 8           Merc 240D  24.4
+#> 9            Merc 230  22.8
+#> 10           Merc 280  19.2
+#> 11          Merc 280C  17.8
+#> 12         Merc 450SE  16.4
+#> 13         Merc 450SL  17.3
+#> 14        Merc 450SLC  15.2
+#> 15 Cadillac Fleetwood  10.4
+clean_names(df)
+#> function (x, df1, df2, ncp, log = FALSE) 
+#> {
+#>     if (missing(ncp)) 
+#>         .Call(C_df, x, df1, df2, log)
+#>     else .Call(C_dnf, x, df1, df2, ncp, log)
+#> }
+#> <bytecode: 0x0000000019d54e78>
+#> <environment: namespace:stats>
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date. `devtools::build_readme()` is handy for this. You could also
-use GitHub Actions to re-render `README.Rmd` every time you push. An
-example workflow can be found here:
-<https://github.com/r-lib/actions/tree/master/examples>.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub and CRAN.

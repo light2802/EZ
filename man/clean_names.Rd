@@ -23,6 +23,3 @@ Sometimes we may get a dataframe wich have column names have characters like !&(
 These are unwanted obviously coz they make it impossible to reference the column using $ operator or while pipelining
 So this function removes those characters from the column names.
 }
-\seealso{
-\code{\link[base:grep]{base::gsub()}} which this function wraps.
-}
